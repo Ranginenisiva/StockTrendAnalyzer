@@ -1,0 +1,10 @@
+streamlit
+langchain
+langchain-community
+openai
+tiktoken
+faiss-cpu
+unstructured
+python-dotenv
+beautifulsoup4
+lxml
