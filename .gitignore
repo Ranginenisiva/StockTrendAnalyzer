@@ -1,0 +1,10 @@
+# Ignore environment variables
+.env
+
+# Ignore Jupyter checkpoints
+.ipynb_checkpoints/
+
+# Ignore pickle files and other large data files
+*.pkl
+
+
