@@ -1,7 +1,7 @@
 streamlit
 langchain
 langchain-community
-openai
+openai>=1.3.0
 tiktoken
 faiss-cpu
 unstructured
