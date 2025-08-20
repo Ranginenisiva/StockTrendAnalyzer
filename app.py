@@ -10,7 +10,11 @@ from langchain.embeddings import OpenAIEmbeddings
 from langchain.vectorstores import FAISS
 from dotenv import load_dotenv
 
-load_dotenv()  # take environment variables from .env (especially openai api key)
+llm = OpenAI(
+    temperature=0.9,
+    max_tokens=500,
+    openai_api_key=os.getenv("OPENAI_API_KEY")  # environment variable nundi
+) # take environment variables from .env (especially openai api key)
 
 st.title("News Research Tool 📈")
 st.sidebar.title("News Article URLs")
