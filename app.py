@@ -10,12 +10,14 @@ from langchain.embeddings import OpenAIEmbeddings
 from langchain.vectorstores import FAISS
 from dotenv import load_dotenv
 
-llm = OpenAI(
-    temperature=0.9,
-    max_tokens=500,
-    openai_api_key=os.getenv("OPENAI_API_KEY")  # environment variable nundi
-) # take environment variables from .env (especially openai api key)
+OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 
+# Embeddings object with timeout
+embeddings = OpenAIEmbeddings(
+    model="text-embedding-3-small",   # ✅ use new embedding model
+    openai_api_key=OPENAI_API_KEY,
+    request_timeout=60                # ✅ retry/timeout fix
+)
 st.title("News Research Tool 📈")
 st.sidebar.title("News Article URLs")
 
